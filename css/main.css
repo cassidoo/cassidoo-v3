@@ -12,6 +12,7 @@ h1 {
 	font-weight: 300;
 	text-align: center;
 	font-size: 3em; 
+	color: #333333;
 }
 
 .heading {
@@ -23,7 +24,7 @@ h1 {
 }
 
 nav {
-	position: fixed;
+	position: absolute;
 	bottom: 0;
 	width: 100%;
 	background-color: #efeff1;
@@ -43,6 +44,13 @@ nav div a {
 	color: #333333;
 	font-weight: 800;
 	font-size: 1.5em;
+}
+
+.section {
+	position: absolute;
+	width: 100%;
+	background-color: #333333;
+	color: #ffffff;
 }
 
 /* Colors */
