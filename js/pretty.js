@@ -73,14 +73,15 @@ function Dot(color) {
 	};
 
 	this.reset = function() {
-		this.x = (WIDTH * Math.random());
 		// location
+		this.x = (WIDTH * Math.random());
 		this.y = (HEIGHT * Math.random());
 
 		this.r = this.settings.radius;
-		this.dx = (Math.random() * this.settings.x_speed) * (Math.random() < .5 ? -1 : 1);
+		
 		// velocity
-		this.dy = (Math.random() * this.settings.y_speed) * (Math.random() < .5 ? -1 : 1);
+		this.dx = (this.settings.x_speed) * (Math.random() < .5 ? -1 : 1);
+		this.dy = (this.settings.y_speed) * (Math.random() < .5 ? -1 : 1);
 
 		this.ratio = Math.random() * this.settings.lifetime;
 		this.settings.ratio = Math.random() + 1;
@@ -89,6 +90,9 @@ function Dot(color) {
 
 		this.settings.xdrift *= Math.random() * (Math.random() < .5 ? -1 : 1);
 		this.settings.ydrift *= Math.random() * (Math.random() < .5 ? -1 : 1);
+		
+		this.savedDx = null;
+		this.savedDy = null;
 	};
 
 	this.fade = function() {
@@ -114,6 +118,17 @@ function Dot(color) {
 
 	this.move = function() {
 		if (!imd) {
+			if(this.savedDx != null)
+			{
+				this.dx = (this.settings.x_speed) * (Math.random() < .5 ? -1 : 1);
+				this.savedDx = null;
+			}
+			if(this.savedDy != null)
+			{
+				this.dy = (this.settings.y_speed) * (Math.random() < .5 ? -1 : 1);
+				this.savedDy = null;
+			}
+			
 			this.x += (this.ratio / this.settings.lifetime) * this.dx;
 			this.y += (this.ratio / this.settings.lifetime) * this.dy;
 
@@ -123,6 +138,17 @@ function Dot(color) {
 			if (this.y > HEIGHT - this.r || this.y < this.r) {
 				this.dy *= -1;
 			}
+			
+		} else {
+			// not sure if I want to do anything with this, but these are basically booleans
+			this.savedDx = this.dx;
+			this.savedDy = this.dy;
+			
+			this.dx = cx - this.x;
+			this.dy = cy - this.y;
+			
+			this.x += (this.ratio / (this.settings.lifetime * 10)) * this.dx;
+			this.y += (this.ratio / (this.settings.lifetime * 10)) * this.dy;
 		}
 
 	};
