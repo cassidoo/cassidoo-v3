@@ -32,10 +32,15 @@ nav {
 	text-align: center;
 }
 
+nav .container {
+	width: 100%;
+	max-width: 768px;
+}
+
 nav div {
 	display: inline-block;
 	text-align: center;
-	width: 15%;
+	width: 18%;
 	padding: 5px;
 }
 
@@ -46,11 +51,28 @@ nav div a {
 	font-size: 1.5em;
 }
 
+.break {
+	width: 100%;
+	height: 5px;
+}
+
 .section {
 	position: absolute;
 	width: 100%;
 	background-color: #333333;
 	color: #ffffff;
+}
+
+.section .content {
+	font-weight: 300;
+	width: 100%;
+	max-width: 768px;
+	padding: 15px 0px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: justify;
+	line-height: 1.45em;
+	font-size: 1.2em;
 }
 
 /* Colors */

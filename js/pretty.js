@@ -19,11 +19,12 @@ var imd = false;
 // is mouse down, initially false
 
 docReady(function() {
+	setcolor();
 	canvas = document.getElementById('dots');
 	canvas.width = WIDTH;
 	canvas.height = HEIGHT;
-	canvas.addEventListener("mousedown", cmousedown, false);
-	canvas.addEventListener("mouseup", cmouseup, false);
+	canvas.addEventListener('mousedown', cmousedown, false);
+	canvas.addEventListener('mouseup', cmouseup, false);
 
 	con = canvas.getContext('2d');
 
@@ -34,6 +35,22 @@ docReady(function() {
 	}
 	setInterval(draw, 60);
 });
+
+function setcolor() {
+	var colorblocks = ['red', 'orange', 'yellow', 'green', 'blue'];
+
+	var color = colorblocks[Math.floor(Math.random() * colorblocks.length)];
+	
+	for(i = 0; i < document.getElementsByClassName('break').length; i++) {
+		document.getElementsByClassName('break')[i].className += ' ' + color;
+	}
+	
+	for(i = 0; i < document.getElementsByClassName('special').length; i++) {
+		document.getElementsByClassName('special')[i].className += ' ' + color + '-font';
+	}
+
+	document.getElementById('name').className += ' ' + color + '-font';
+}
 
 function cmousedown(e) {
 	cx = e.pageX;
@@ -57,7 +74,7 @@ function draw() {
 }
 
 function random_color() {
-	colors = ['#d32542', '#ff7f19', '#ffc500', '#a3de00', '#25c7d3'];
+	var colors = ['#d32542', '#ff7f19', '#ffc500', '#a3de00', '#25c7d3'];
 	return colors[Math.floor(Math.random() * colors.length)];
 }
 
@@ -78,7 +95,7 @@ function Dot(color) {
 		this.y = (HEIGHT * Math.random());
 
 		this.r = this.settings.radius;
-		
+
 		// velocity
 		this.dx = (this.settings.x_speed) * (Math.random() < .5 ? -1 : 1);
 		this.dy = (this.settings.y_speed) * (Math.random() < .5 ? -1 : 1);
@@ -90,7 +107,7 @@ function Dot(color) {
 
 		this.settings.xdrift *= Math.random() * (Math.random() < .5 ? -1 : 1);
 		this.settings.ydrift *= Math.random() * (Math.random() < .5 ? -1 : 1);
-		
+
 		this.savedDx = null;
 		this.savedDy = null;
 	};
@@ -118,17 +135,15 @@ function Dot(color) {
 
 	this.move = function() {
 		if (!imd) {
-			if(this.savedDx != null)
-			{
+			if (this.savedDx != null) {
 				this.dx = (this.settings.x_speed) * (Math.random() < .5 ? -1 : 1);
 				this.savedDx = null;
 			}
-			if(this.savedDy != null)
-			{
+			if (this.savedDy != null) {
 				this.dy = (this.settings.y_speed) * (Math.random() < .5 ? -1 : 1);
 				this.savedDy = null;
 			}
-			
+
 			this.x += (this.ratio / this.settings.lifetime) * this.dx;
 			this.y += (this.ratio / this.settings.lifetime) * this.dy;
 
@@ -138,15 +153,15 @@ function Dot(color) {
 			if (this.y > HEIGHT - this.r || this.y < this.r) {
 				this.dy *= -1;
 			}
-			
+
 		} else {
 			// not sure if I want to do anything with this, but these are basically booleans
 			this.savedDx = this.dx;
 			this.savedDy = this.dy;
-			
+
 			this.dx = cx - this.x;
 			this.dy = cy - this.y;
-			
+
 			this.x += (this.ratio / (this.settings.lifetime * 10)) * this.dx;
 			this.y += (this.ratio / (this.settings.lifetime * 10)) * this.dy;
 		}
