@@ -18,7 +18,7 @@ var cy;
 var imd = false;
 // is mouse down, initially false
 
-docReady(function() {
+$(function() {
 	setcolor();
 	canvas = document.getElementById('dots');
 	canvas.width = WIDTH;
