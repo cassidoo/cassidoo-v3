@@ -6,17 +6,17 @@ $(function() {
 });
 
 function load_about() {
-	$("#about").load("./about.html");
+	$("#about").load("./about.html", function() { addaccentcolor(); });
 }
 
 function load_press() {
-	$("#press").load("./press.html");
+	$("#press").load("./press.html", function() { addaccentcolor(); });
 }
 
 function load_projects() {
-	$("#projects").load("./projects.html");
+	$("#projects").load("./projects.html", function() { addaccentcolor(); });
 }
 
 function load_outreach() {
-	$("#outreach").load("./outreach.html");
+	$("#outreach").load("./outreach.html", function() { addaccentcolor(); });
 }

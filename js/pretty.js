@@ -10,6 +10,7 @@
 
 var WIDTH = window.innerWidth;
 var HEIGHT = window.innerHeight;
+var accentColor;
 var canvas;
 var con;
 var pxs = [];
@@ -19,10 +20,9 @@ var imd = false;
 // is mouse down, initially false
 
 $(function() {
-	setcolor();
 	canvas = document.getElementById('dots');
 	canvas.width = WIDTH;
-	canvas.height = HEIGHT;
+	canvas.height = HEIGHT - 60;
 	canvas.addEventListener('mousedown', cmousedown, false);
 	canvas.addEventListener('mouseup', cmouseup, false);
 
@@ -34,22 +34,30 @@ $(function() {
 		pxs[i].reset();
 	}
 	setInterval(draw, 60);
+	setaccentcolor();
 });
 
-function setcolor() {
+function setaccentcolor() {
 	var colorblocks = ['red', 'orange', 'yellow', 'green', 'blue'];
 
-	var color = colorblocks[Math.floor(Math.random() * colorblocks.length)];
-	
-	for(i = 0; i < document.getElementsByClassName('break').length; i++) {
-		document.getElementsByClassName('break')[i].className += ' ' + color;
+	accentColor = colorblocks[Math.floor(Math.random() * colorblocks.length)];
+}
+
+function addaccentcolor() {
+	for ( i = 0; i < document.getElementsByClassName('break').length; i++) {
+		document.getElementsByClassName('break')[i].className += ' ' + accentColor;
 	}
 	
-	for(i = 0; i < document.getElementsByClassName('special').length; i++) {
-		document.getElementsByClassName('special')[i].className += ' ' + color + '-font';
+	for ( j = 0; j < document.getElementsByClassName('special').length; j++) {
+		document.getElementsByClassName('special')[j].className += ' ' + accentColor + '-font';
+	}
+	
+	for ( k = 0; k < document.getElementsByTagName('a').length; k++) {
+		document.getElementsByTagName('a')[k + 5].className += ' ' + accentColor + '-font';
+		// added the +5 to not affect the <nav>... kinda hacky
 	}
 
-	document.getElementById('name').className += ' ' + color + '-font';
+	document.getElementById('name').className += ' ' + accentColor + '-font';
 }
 
 function cmousedown(e) {
