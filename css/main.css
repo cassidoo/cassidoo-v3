@@ -11,7 +11,7 @@ h1 {
 	font-family: 'Bitter', serif;
 	font-weight: 300;
 	text-align: center;
-	font-size: 3em; 
+	font-size: 3em;
 	color: #333333;
 }
 
@@ -24,8 +24,6 @@ h1 {
 }
 
 nav {
-	position: absolute;
-	bottom: 0;
 	width: 100%;
 	background-color: #efeff1;
 	height: 50px;
@@ -42,6 +40,14 @@ nav div {
 	text-align: center;
 	width: 18%;
 	padding: 5px;
+}
+
+.content a {
+	/*color: #ffffff;*/
+}
+
+#press a {
+	line-height: 2em;
 }
 
 nav div a {
@@ -66,7 +72,7 @@ nav div a {
 	font-weight: 300;
 	width: 100%;
 	max-width: 768px;
-	padding: 15px 0px;
+	padding: 15px 0px 30px;
 	margin-left: auto;
 	margin-right: auto;
 	text-align: justify;
