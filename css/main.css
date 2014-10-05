@@ -7,12 +7,20 @@ body {
 	font-family: 'Source Sans Pro', sans-serif;
 }
 
-h1 {
+h1, h2 {
 	font-family: 'Bitter', serif;
 	font-weight: 300;
 	text-align: center;
 	font-size: 3em;
+}
+
+h1 {
 	color: #333333;
+}
+
+h2 {
+	color: #ffffff;
+	padding-top: 15px;
 }
 
 .heading {
@@ -42,8 +50,22 @@ nav div {
 	padding: 5px;
 }
 
-.content a {
-	/*color: #ffffff;*/
+a:hover {
+	color: #ffffff;
+}
+
+.subheader {
+	text-align: center;
+	font-weight: 700;
+	font-size: 1.5em;
+}
+
+.projectimg {
+	background-color: #ffffff;
+	float: left;
+	margin: 7px;
+	padding: 5px;
+	max-width: 300px;
 }
 
 #press a {
@@ -55,6 +77,10 @@ nav div a {
 	color: #333333;
 	font-weight: 800;
 	font-size: 1.5em;
+}
+
+nav div a:hover {
+	color: #333333;
 }
 
 .break {
@@ -78,6 +104,14 @@ nav div a {
 	text-align: justify;
 	line-height: 1.45em;
 	font-size: 1.2em;
+}
+
+#contact {
+	text-align: center;
+}
+
+#contact i {
+	padding: 0px 10px;
 }
 
 /* Colors */
