@@ -3,6 +3,7 @@ $(function() {
 	load_press();
 	load_projects();
 	load_outreach();
+	load_contact();
 });
 
 function load_about() {
@@ -19,4 +20,8 @@ function load_projects() {
 
 function load_outreach() {
 	$("#outreach").load("./outreach.html", function() { addaccentcolor(); });
+}
+
+function load_contact() {
+	$("#contact").load("./contact.html", function() { addaccentcolor(); });
 }

@@ -44,6 +44,9 @@ function setaccentcolor() {
 }
 
 function addaccentcolor() {
+	
+	document.getElementById('name').className += ' ' + accentColor + '-font';
+	
 	for ( i = 0; i < document.getElementsByClassName('break').length; i++) {
 		document.getElementsByClassName('break')[i].className += ' ' + accentColor;
 	}
@@ -52,12 +55,10 @@ function addaccentcolor() {
 		document.getElementsByClassName('special')[j].className += ' ' + accentColor + '-font';
 	}
 	
-	for ( k = 0; k < document.getElementsByTagName('a').length; k++) {
+	for ( k = 0; k < document.getElementsByTagName('a').length - 5; k++) {
 		document.getElementsByTagName('a')[k + 5].className += ' ' + accentColor + '-font';
 		// added the +5 to not affect the <nav>... kinda hacky
 	}
-
-	document.getElementById('name').className += ' ' + accentColor + '-font';
 }
 
 function cmousedown(e) {
