@@ -15,6 +15,7 @@
 
 body {
 	font-family: 'Source Sans Pro', sans-serif;
+	overflow-x: hidden;
 }
 
 h1, h2 {
@@ -39,6 +40,10 @@ h2 {
 	width: 500px;
 	left: 50%;
 	margin-left: -250px;
+}
+
+canvas {
+	min-height: 150px;
 }
 
 nav {
@@ -170,10 +175,8 @@ nav div a:hover {
 
 @media all and (max-width: 800px) {
 	.section .content {
-		font-weight: 300;
 		width: 90%;
 		max-width: 700px;
-		font-size: 1.2em;
 	}
 }
 
@@ -187,9 +190,9 @@ nav div a:hover {
 	}
 }
 
-@media all and (max-width: 530px) {
+@media all and (max-width: 530px) {	
 	h1 {
-		font-size: 2.7em;
+		font-size: 2.5em;
 	}
 
 	.heading {
@@ -209,5 +212,36 @@ nav div a:hover {
 	
 	#contact a {
 		display: block;
+	}
+}
+
+@media all and (max-width: 480px) {
+	h1 {
+		font-size: 2em;
+	}
+	
+	.heading {
+		top: 2%;
+	}
+	
+	nav {
+		height: auto;
+	}
+	
+	nav .container div {
+		display: block;
+		width: 100%;
+		text-align: center;
+		margin-left: auto;
+		margin-right: auto;
+		padding: 5px 0px;
+	}
+	
+	nav .container .press {
+		display: none;
+	}
+	
+	nav .container .projects {
+		display: none;
 	}
 }

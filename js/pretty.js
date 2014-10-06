@@ -20,13 +20,7 @@ var imd = false;
 // is mouse down, initially false
 
 $(function() {
-	canvas = document.getElementById('dots');
-	canvas.width = WIDTH;
-	canvas.height = HEIGHT - 60;
-	canvas.addEventListener('mousedown', cmousedown, false);
-	canvas.addEventListener('mouseup', cmouseup, false);
-
-	con = canvas.getContext('2d');
+	canvassetup();
 
 	var i;
 	for ( i = 0; i < 50; i += 1) {
@@ -37,6 +31,26 @@ $(function() {
 	setaccentcolor();
 	$('a').smoothScroll();
 });
+
+function canvassetup() {
+	
+	WIDTH = window.innerWidth;
+    HEIGHT = window.innerHeight;
+	
+	canvas = document.getElementById('dots');
+	canvas.width = WIDTH;
+	
+	if(HEIGHT < 400) {
+		canvas.height = 400;
+	}
+	else {
+		canvas.height = HEIGHT - 60;
+	}
+	canvas.addEventListener('mousedown', cmousedown, false);
+	canvas.addEventListener('mouseup', cmouseup, false);
+
+	con = canvas.getContext('2d');
+}
 
 function setaccentcolor() {
 	var colorblocks = ['red', 'orange', 'yellow', 'green', 'blue'];
