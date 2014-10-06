@@ -35,6 +35,7 @@ $(function() {
 	}
 	setInterval(draw, 60);
 	setaccentcolor();
+	$('a').smoothScroll();
 });
 
 function setaccentcolor() {

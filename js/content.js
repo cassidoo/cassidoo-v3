@@ -1,3 +1,13 @@
+/*
+ Hello.
+
+ I see you looking through my source.  You silly goose.
+
+ Why not just email me, or check out my GitHub?
+
+ github.com/cassidoo
+ */
+
 $(function() {
 	load_about();
 	load_press();
@@ -7,21 +17,31 @@ $(function() {
 });
 
 function load_about() {
-	$("#about").load("./about.html", function() { addaccentcolor(); });
+	$("#about").load("./about.html", function() {
+		addaccentcolor();
+	});
 }
 
 function load_press() {
-	$("#press").load("./press.html", function() { addaccentcolor(); });
+	$("#press").load("./press.html", function() {
+		addaccentcolor();
+	});
 }
 
 function load_projects() {
-	$("#projects").load("./projects.html", function() { addaccentcolor(); });
+	$("#projects").load("./projects.html", function() {
+		addaccentcolor();
+	});
 }
 
 function load_outreach() {
-	$("#outreach").load("./outreach.html", function() { addaccentcolor(); });
+	$("#outreach").load("./outreach.html", function() {
+		addaccentcolor();
+	});
 }
 
 function load_contact() {
-	$("#contact").load("./contact.html", function() { addaccentcolor(); });
+	$("#contact").load("./contact.html", function() {
+		addaccentcolor();
+	});
 }

@@ -1,3 +1,13 @@
+/*
+ Hello.
+
+ I see you looking through my source.  You silly goose.
+
+ Why not just email me, or check out my GitHub?
+
+ github.com/cassidoo
+ */
+
 * {
 	margin: 0;
 	padding: 0;
@@ -154,4 +164,50 @@ nav div a:hover {
 
 .blue-font {
 	color: #25c7d3;
+}
+
+/*Responsive Jazz*/
+
+@media all and (max-width: 800px) {
+	.section .content {
+		font-weight: 300;
+		width: 90%;
+		max-width: 700px;
+		font-size: 1.2em;
+	}
+}
+
+@media all and (max-width: 650px) {
+	.projects {
+		display: none;
+	}
+	
+	nav div {
+		width: 22%;
+	}
+}
+
+@media all and (max-width: 530px) {
+	h1 {
+		font-size: 2.7em;
+	}
+
+	.heading {
+		top: 5%;
+		width: 400px;
+		margin-left: -200px;
+	}
+	
+	.press {
+		display: none;
+	}
+	
+	nav div {
+		width: 30%;
+		padding: 5px 0px;
+	}
+	
+	#contact a {
+		display: block;
+	}
 }
