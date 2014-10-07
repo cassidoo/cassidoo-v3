@@ -27,7 +27,7 @@ $(function() {
 		pxs[i] = new Dot(random_color());
 		pxs[i].reset();
 	}
-	setInterval(draw, 16);
+	requestAnimationFrame(draw);
 	setaccentcolor();
 	$('a').smoothScroll();
 });
@@ -95,6 +95,8 @@ function draw() {
 		pxs[i].move();
 		pxs[i].draw();
 	}
+
+	requestAnimationFrame(draw);
 }
 
 function random_color() {
