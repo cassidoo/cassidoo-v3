@@ -91,7 +91,6 @@ function draw() {
 
 	var i;
 	for ( i = 0; i < pxs.length; i += 1) {
-		pxs[i].fade();
 		pxs[i].move();
 		pxs[i].draw();
 	}
@@ -136,10 +135,6 @@ function Dot(color) {
 
 		this.savedDx = null;
 		this.savedDy = null;
-	};
-
-	this.fade = function() {
-		this.ratio += this.settings.ratio;
 	};
 
 	this.draw = function() {
