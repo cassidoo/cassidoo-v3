@@ -107,8 +107,8 @@ function random_color() {
 function Dot(color) {
 	this.settings = {
 		lifetime : 8000,
-		x_speed : 5,
-		y_speed : 4,
+		x_speed : 3,
+		y_speed : 2,
 		radius : 3,
 		ratio : 1,
 		x_origin : 960,
@@ -123,8 +123,8 @@ function Dot(color) {
 		this.r = this.settings.radius;
 
 		// velocity
-		this.dx = (this.settings.x_speed) * (Math.random() < .5 ? -1 : 1);
-		this.dy = (this.settings.y_speed) * (Math.random() < .5 ? -1 : 1);
+		this.dx = (this.settings.x_speed) * (Math.random() < .5 ? -.5 : .5);
+		this.dy = (this.settings.y_speed) * (Math.random() < .5 ? -.5 : .5);
 
 		this.ratio = Math.random() * this.settings.lifetime;
 		this.settings.ratio = Math.random() + 1;
@@ -162,11 +162,11 @@ function Dot(color) {
 	this.move = function() {
 		if (!imd) {
 			if (this.savedDx != null) {
-				this.dx = (this.settings.x_speed) * (Math.random() < .5 ? -1 : 1);
+				this.dx = (this.settings.x_speed) * (Math.random() < .5 ? -.5 : .5);
 				this.savedDx = null;
 			}
 			if (this.savedDy != null) {
-				this.dy = (this.settings.y_speed) * (Math.random() < .5 ? -1 : 1);
+				this.dy = (this.settings.y_speed) * (Math.random() < .5 ? -.5 : .5);
 				this.savedDy = null;
 			}
 
