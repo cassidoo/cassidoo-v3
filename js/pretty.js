@@ -35,7 +35,7 @@ $(function() {
 function canvassetup() {
 	
 	WIDTH = window.innerWidth;
-    HEIGHT = window.innerHeight;
+	HEIGHT = window.innerHeight;
 	
 	canvas = document.getElementById('dots');
 	canvas.width = WIDTH;
